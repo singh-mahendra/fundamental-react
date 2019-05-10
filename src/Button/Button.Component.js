@@ -8,7 +8,6 @@ export const ButtonComponent = () => {
     const clickBtnHandler = btn => {
         alert(`You clicked the ${btn} Button`);
     };
-
     return (
         <ComponentPage
             description={`A **Button** allows users to perform an action. The priority of buttons within a page should be considered.
@@ -17,7 +16,6 @@ export const ButtonComponent = () => {
                 the action it performs is potentially destructive.`}
             sourceModulePath={path.join(__dirname, './Button')}
             title='Button'>
-
             <Example
                 centered
                 description={`There are three emphasis styles used to indicate the importance of the button on
@@ -28,27 +26,28 @@ export const ButtonComponent = () => {
                     There may be more than one on the page.`}
                 title='Button Options'>
                 <div className='fd-doc__margin--button'>
-                    <Button onClick={() => clickBtnHandler('Emphasized')} option='emphasized'>
+                    <Button onClick={() => clickBtnHandler('Emphasized')} type='Emphasized'>
                         Emphasized Button
                     </Button>
                     <Button onClick={() => clickBtnHandler('Regular')}>Regular Button</Button>
-                    <Button onClick={() => clickBtnHandler('Light')} option='light'>Light Button</Button>
+                    {/* <Button onClick={() => clickBtnHandler('Light')} option='light'>Light Button</Button> */}
                 </div>
             </Example>
 
             <Example
                 centered
-                description={`* **Action Button**: The default button \n\n* **Standard Button**:
+                description={`* **Action Button**: The default button \n\n* **Default Button**:
                     Neutral or informative color \n\n* **Positive Button**: Used for positive actions 
                     such as approved, ok, yes. \n\n* **Medium Button**: Used for warnings or 
                     alert \n\n* **Negative Button**: Used for negative actions such as decline, cancel, no.`}
                 title='Button Types'>
                 <div className='fd-doc__margin--button'>
                     <Button>Action Button</Button>
-                    <Button type='standard'>Standard Button</Button>
-                    <Button type='positive'>Positive Button</Button>
-                    <Button type='medium'>Medium Button</Button>
-                    <Button type='negative'>Negative Button</Button>
+                    <Button type='Default'>Default Button</Button>
+                    <Button type='Positive'>Positive Button</Button>
+                    {/* <Button type='medium'>Medium Button</Button> */}
+                    <Button type='Negative'>Negative Button</Button>
+                    <Button type='Transparent'>Transparent Button</Button>
                 </div>
             </Example>
 
@@ -58,30 +57,28 @@ export const ButtonComponent = () => {
                     attach an icon to the button.`}
                 title='Buttons with Icon'>
                 <div className='fd-doc__margin--button'>
-                    <Button glyph='cart' option='emphasized'>
+                    <Button glyph='cart' type='Emphasized'>
                         Add to Cart
                     </Button>
 
                     <Button glyph='cart'>Add to Cart</Button>
 
-                    <Button glyph='filter' option='light'>
+                    {/* <Button glyph='filter' option='light'>
                         Add to Cart
-                    </Button>
+                    </Button> */}
 
-                    <Button glyph='accept' option='emphasized'
-                        type='positive'>
+                    <Button glyph='accept' type='Emphasized'
+                        type='Positive'>
                         Approve
                     </Button>
 
-                    <Button glyph='decline' option='emphasized'
-                        type='negative'>
+                    <Button glyph='decline' type='Negative'>
                         Reject
                     </Button>
 
                     <Button
                         glyph='alert'
-                        option='emphasized'
-                        type='medium'>
+                        type='Emphasized'>
                         Review
                     </Button>
 
@@ -89,22 +86,19 @@ export const ButtonComponent = () => {
                     <br />
                     <br />
 
-                    <Button glyph='cart' option='emphasized' />
+                    <Button glyph='cart' type='Emphasized' />
 
                     <Button glyph='cart' />
 
-                    <Button glyph='filter' option='light' />
+                    <Button glyph='filter' />
 
-                    <Button glyph='accept' option='emphasized'
-                        type='positive' />
+                    <Button glyph='accept' type='Emphasized' />
 
                     <Button
                         glyph='decline'
-                        option='emphasized'
-                        type='negative' />
+                        type='Emphasized' />
 
-                    <Button glyph='alert' option='emphasized'
-                        type='medium' />
+                    <Button glyph='alert' type='Emphasized' />
                 </div>
             </Example>
 
@@ -125,11 +119,11 @@ export const ButtonComponent = () => {
                     and \`disabled\`.`}
                 title='Button States'>
                 <div className='fd-doc__margin--button'>
-                    <Button option='emphasized'>Normal State</Button>
-                    <Button option='emphasized' selected>
+                    <Button type='Emphasized'>Normal State</Button>
+                    <Button selected type='Emphasized'>
                         Selected State
                     </Button>
-                    <Button disabled option='emphasized'>
+                    <Button disabled type='Emphasized'>
                         Disabled State
                     </Button>
                     <br />
@@ -148,38 +142,38 @@ export const ButtonComponent = () => {
                     </Button>
                     <br />
                     <br />
-                    <Button type='standard'>Normal State</Button>
-                    <Button selected type='standard'>
+                    <Button type='Default'>Normal State</Button>
+                    <Button selected type='Default'>
                         Selected State
                     </Button>
-                    <Button disabled type='standard'>
+                    <Button disabled type='Default'>
                         Disabled State
                     </Button>
                     <br />
                     <br />
-                    <Button type='positive'>Normal State</Button>
-                    <Button selected type='positive'>
+                    <Button type='Positive'>Normal State</Button>
+                    <Button selected type='Positive'>
                         Selected State
                     </Button>
-                    <Button disabled type='positive'>
+                    <Button disabled type='Positive'>
                         Disabled State
                     </Button>
                     <br />
                     <br />
-                    <Button type='medium'>Normal State</Button>
+                    {/* <Button type='medium'>Normal State</Button>
                     <Button selected type='medium'>
                         Selected State
                     </Button>
                     <Button disabled type='medium'>
                         Disabled State
-                    </Button>
+                    </Button> */}
                     <br />
                     <br />
-                    <Button type='negative'>Normal State</Button>
-                    <Button selected type='negative'>
+                    <Button type='Negative'>Normal State</Button>
+                    <Button selected type='Negative'>
                         Selected State
                     </Button>
-                    <Button disabled type='negative'>
+                    <Button disabled type='Negative'>
                         Disabled State
                     </Button>
                 </div>
@@ -222,7 +216,7 @@ export const ButtonComponent = () => {
                     {
                         attribute: 'type',
                         typeOfAttribute: 'string',
-                        'enum': ['', 'standard', 'positive', 'medium', 'negative']
+                        'enum': ['', 'Default', 'positive', 'medium', 'negative']
                     },
                     {
                         attribute: 'compact',
@@ -244,7 +238,7 @@ export const ButtonComponent = () => {
                 ]}>
                 <Button compact={false} disabled={false}
                     glyph='' option='light'
-                    selected={false} type='standard'>
+                    selected={false} type='Default'>
                     BUTTON
                 </Button>
             </Playground>

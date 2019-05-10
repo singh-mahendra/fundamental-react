@@ -1,7 +1,10 @@
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { default as styles } from '@ui5/webcomponents/dist/themes/Button.css.js';
+import { ThemeProvider } from '../ThemeProvider/ThemeProvider';
 import { BUTTON_OPTIONS, BUTTON_TYPES } from '../utils/constants';
+
 
 const Button = ({
     option,
@@ -19,25 +22,27 @@ const Button = ({
     ...props
 }) => {
     const buttonClasses = classnames(
+        'sapMBtn',
         {
-            'fd-button': !option,
-            [`fd-button--${option}`]: !!option,
-            [`fd-button--${type}`]: !!type,
-            'fd-dropdown__control': dropdown,
-            'fd-button--compact': compact,
+            'sapMBtnDefault': !type,
+            [`sapMBtn${type}`]: !!type,
+            'sapWCIconInButton': !!glyph,
             [`sap-icon--${glyph}`]: !!glyph,
-            'fd-global-nav__btn': navbar,
-            'is-selected': selected,
-            'is-disabled': disabled
+            'sapMBtnActive': selected,
+            'sapMBtnDisabled': disabled
         },
         className
     );
 
-    return (<button {...props} className={buttonClasses}
-        disabled={disabled} onClick={onClick}
-        selected={selected} type={typeAttr}>
-        {children}
-    </button>);
+    return (
+        <ThemeProvider componentStyles={styles}>
+            <button {...props} className={buttonClasses}
+                disabled={disabled} onClick={onClick}
+                selected={selected}
+                type={typeAttr}>
+                {children}
+            </button>
+        </ThemeProvider>);
 };
 
 Button.displayName = 'Button';

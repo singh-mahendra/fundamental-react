@@ -17,7 +17,7 @@
     "build-js": "node scripts/build.js",
     "build:lint:fix": "npm run build:lint -- --fix",
     "build:lint": "eslint 'src/**' --ext .js,.jsx --env browser,node",
-    "build": "npm run build:index && rm -rf lib && NODE_ENV=production babel src --out-dir lib --ignore \"src/**/*.spec.js\",\"src/**/*.test.js\",\"src/**/*.Component.js\",\"src/_playground/*\"",
+    "build": "rm -rf lib && NODE_ENV=production babel src --out-dir lib --ignore \"src/**/*.spec.js\",\"src/**/*.test.js\",\"src/**/*.Component.js\",\"src/_playground/*\"",
     "build:index": "babel-node devtools/buildIndexFiles.js",
     "config:lint": "eslint 'config/**' --ext .js,.jsx --env browser,node",
     "config:lint:fix": "npm run config:lint -- --fix",
@@ -46,6 +46,7 @@
     "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive"
   },
   "dependencies": {
+    "@ui5/webcomponents": "^0.10.1",
     "chain-function": "^1.0.1",
     "classnames": "^2.2.6",
     "focus-trap-react": "^6.0.0",
