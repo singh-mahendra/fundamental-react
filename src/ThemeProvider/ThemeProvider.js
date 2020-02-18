@@ -17,7 +17,6 @@ function ThemeProvider(props) {
     useEffect(() => {
         if (!disableStyles) {
             // css variable root declarations
-            console.log(theme)
             switch (theme) {
                 case 'dark':
                     require('@sap-theming/theming-base-content/content/Base/baseLib/sap_fiori_3_dark/css_variables.css');

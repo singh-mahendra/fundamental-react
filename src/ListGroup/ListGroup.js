@@ -9,7 +9,7 @@ const ListGroup = React.forwardRef(({ children, className, disableStyles, ...pro
 
     useEffect(() => {
         if (!disableStyles) {
-            require('fundamental-styles/dist/fonts.css');
+
             require('fundamental-styles/dist/list-group.css');
         }
     }, []);

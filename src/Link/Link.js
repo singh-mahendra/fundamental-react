@@ -6,7 +6,7 @@ const Link = React.forwardRef(({ className, children, disabled, disableStyles, .
 
     useEffect(() => {
         if (!disableStyles) {
-            require('fundamental-styles/dist/fonts.css');
+
             require('fundamental-styles/dist/link.css');
         }
     }, []);

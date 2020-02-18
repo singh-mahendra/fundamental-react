@@ -8,7 +8,7 @@ const Identifier = React.forwardRef(({ glyph, size, modifier, color, label, back
 
     useEffect(() => {
         if (!disableStyles) {
-            require('fundamental-styles/dist/icon.css');
+
             require('fundamental-styles/dist/helpers.css');
             require('fundamental-styles/dist/identifier.css');
         }

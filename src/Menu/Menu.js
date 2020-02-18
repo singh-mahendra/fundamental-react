@@ -9,7 +9,7 @@ const Menu = React.forwardRef(({ addonBefore, children, className, disableStyles
 
     useEffect(() => {
         if (!disableStyles) {
-            require('fundamental-styles/dist/fonts.css');
+
             require('fundamental-styles/dist/menu.css');
         }
     }, []);

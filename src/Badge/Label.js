@@ -7,7 +7,7 @@ const Label = React.forwardRef(({ type, children, className, disableStyles, ...p
 
     useEffect(() => {
         if (!disableStyles) {
-            require('fundamental-styles/dist/fonts.css');
+
             require('fundamental-styles/dist/label.css');
         }
     }, []);

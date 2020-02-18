@@ -7,8 +7,8 @@ const Status = React.forwardRef(({ type, glyph, children, className, disableStyl
 
     useEffect(() => {
         if (!disableStyles) {
-            require('fundamental-styles/dist/fonts.css');
-            require('fundamental-styles/dist/icon.css');
+
+
             require('fundamental-styles/dist/status-label.css');
         }
     }, []);

@@ -1,15 +1,9 @@
 import classnames from 'classnames';
 import { ICON_SIZES } from '../utils/constants';
 import PropTypes from 'prop-types';
-import React, { useEffect } from 'react';
+import React from 'react';
 
 const Icon = React.forwardRef(({ glyph, size, className, disableStyles, ...props }, ref) => {
-
-    useEffect(() => {
-        if (!disableStyles) {
-            require('fundamental-styles/dist/icon.css');
-        }
-    }, []);
 
     const iconClasses = classnames(
         {

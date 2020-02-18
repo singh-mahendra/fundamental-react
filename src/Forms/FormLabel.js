@@ -6,7 +6,7 @@ const FormLabel = React.forwardRef(({ required, children, className, disabled, d
 
     useEffect(() => {
         if (!disableStyles) {
-            require('fundamental-styles/dist/fonts.css');
+
             require('fundamental-styles/dist/form-label.css');
         }
     }, []);

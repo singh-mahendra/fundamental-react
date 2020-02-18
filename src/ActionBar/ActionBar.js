@@ -13,7 +13,7 @@ const ActionBar = React.forwardRef(({ children, className, disableStyles, ...pro
 
     useEffect(() => {
         if (!disableStyles) {
-            require('fundamental-styles/dist/fonts.css');
+
             require('fundamental-styles/dist/action-bar.css');
         }
     }, []);

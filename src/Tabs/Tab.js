@@ -7,7 +7,7 @@ const Tab = React.forwardRef(({ title, disabled, glyph, id, selected, onClick,
 
     useEffect(() => {
         if (!disableStyles) {
-            require('fundamental-styles/dist/fonts.css');
+
             require('fundamental-styles/dist/tabs.css');
         }
     }, []);
