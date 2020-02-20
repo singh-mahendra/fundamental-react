@@ -5,7 +5,7 @@ import React, { useEffect } from 'react';
 const ThemeContext = React.createContext(null);
 
 function ThemeProvider(props) {
-    const { children, theme, disableStyles } = props;
+    const { children, disableStyles } = props;
     useEffect(() => {
         if (!disableStyles) {
             //require fonts and icons
@@ -14,31 +14,12 @@ function ThemeProvider(props) {
         }
     }, []);
 
-    useEffect(() => {
-        if (!disableStyles) {
-            // css variable root declarations
-            switch (theme) {
-                case 'dark':
-                    require('@sap-theming/theming-base-content/content/Base/baseLib/sap_fiori_3_dark/css_variables.css');
-                    break;
-                case 'light-dark':
-                    require('@sap-theming/theming-base-content/content/Base/baseLib/sap_fiori_3_light_dark/css_variables.css');
-                    break;
-                case 'default':
-                    require('@sap-theming/theming-base-content/content/Base/baseLib/sap_fiori_3/css_variables.css');
-                    break;
-            }
-        }
-    }, [theme]);
-
-
-    return <ThemeContext.Provider value={theme}>{children}</ThemeContext.Provider>;
+    return <ThemeContext.Provider>{children}</ThemeContext.Provider>;
 }
 
 ThemeProvider.propTypes = {
     children: PropTypes.node.isRequired,
-    disableStyles: PropTypes.bool,
-    theme: PropTypes.oneOf(['dark', 'light-dark', 'default'])
+    disableStyles: PropTypes.bool
 };
 
 export default ThemeProvider;
