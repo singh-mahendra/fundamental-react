@@ -25,19 +25,30 @@ storiesOf('Components|Switch', module)
                     glyph: 'decline'
                 }
             })}
+            localizedText={{
+                inputLabel: 'Semantic Switch'
+            }}
             semantic={boolean('semantic', false)}>{text('label', 'label')}</Switch>
     ))
     .add('Default', () => (
-        <Switch>Switch label</Switch>
+        <Switch localizedText={{
+            inputLabel: 'Default'
+        }}>Switch label</Switch>
     ))
     .add('Checked', () => (
-        <Switch checked>Switch label</Switch>
+        <Switch checked localizedText={{
+            inputLabel: 'Checked'
+        }}>Switch label</Switch>
     ))
     .add('Compact', () => (
-        <Switch compact>Switch label</Switch>
+        <Switch compact localizedText={{
+            inputLabel: 'Compact'
+        }}>Switch label</Switch>
     ))
     .add('Disabled', () => (
-        <Switch disabled>Switch label</Switch>
+        <Switch disabled localizedText={{
+            inputLabel: 'Disabled'
+        }}>Switch label</Switch>
     ))
     .add('with Icons', () => (
         <Switch internalLabels={{
@@ -49,10 +60,14 @@ storiesOf('Components|Switch', module)
                 text: 'off',
                 glyph: 'decline'
             }
+        }} localizedText={{
+            inputLabel: 'with Icons'
         }}>Switch label</Switch>
     ))
     .add('Semantic', () => (
-        <Switch semantic>Switch label</Switch>
+        <Switch localizedText={{
+            inputLabel: 'Semantic'
+        }} semantic>Switch label</Switch>
     ))
     .add('No Label', () => (
         <Switch />

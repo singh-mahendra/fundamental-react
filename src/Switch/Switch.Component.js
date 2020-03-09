@@ -16,7 +16,9 @@ export const SwitchComponent = () => {
 
             <Example title='Sizes'>
                 <>
-                    <Switch>
+                    <Switch localizedText={{
+                        inputLabel: 'Default Switch'
+                    }}>
                         Default Switch
                     </Switch>
                     <Switch compact>

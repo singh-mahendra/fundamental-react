@@ -9,9 +9,11 @@ exports[`<Switch /> create Switch component 1`] = `
   >
     <input
       aria-checked={false}
+      aria-label="Toggle"
       checked={false}
       className="fd-switch__input"
       onChange={[Function]}
+      role="switch"
       type="checkbox"
     />
     <div
@@ -40,9 +42,11 @@ exports[`<Switch /> create Switch component 2`] = `
   >
     <input
       aria-checked={true}
+      aria-label="Toggle"
       checked={true}
       className="fd-switch__input"
       onChange={[Function]}
+      role="switch"
       type="checkbox"
     />
     <div
@@ -71,10 +75,12 @@ exports[`<Switch /> create Switch component 3`] = `
   >
     <input
       aria-checked={false}
+      aria-label="Toggle"
       checked={false}
       className="fd-switch__input"
       disabled={true}
       onChange={[Function]}
+      role="switch"
       type="checkbox"
     />
     <div
@@ -103,10 +109,12 @@ exports[`<Switch /> create Switch component 4`] = `
   >
     <input
       aria-checked={true}
+      aria-label="Toggle"
       checked={true}
       className="fd-switch__input"
       disabled={true}
       onChange={[Function]}
+      role="switch"
       type="checkbox"
     />
     <div

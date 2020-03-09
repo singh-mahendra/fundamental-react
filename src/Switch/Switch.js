@@ -1,4 +1,5 @@
 import classnames from 'classnames';
+import CustomPropTypes from '../utils/CustomPropTypes/CustomPropTypes';
 import FormLabel from '../Forms/FormLabel';
 import PropTypes from 'prop-types';
 import SwitchItem from './_SwitchItem';
@@ -13,6 +14,7 @@ const Switch = React.forwardRef(({
     disableStyles,
     className,
     id,
+    localizedText,
     inputProps,
     internalLabels,
     onChange,
@@ -53,12 +55,14 @@ const Switch = React.forwardRef(({
                 <input
                     {...inputProps}
                     aria-checked={isChecked}
+                    aria-label={localizedText.inputLabel}
                     checked={isChecked}
                     className='fd-switch__input'
                     disabled={disabled}
                     id={id}
                     onChange={handleChange}
                     ref={ref}
+                    role='switch'
                     type='checkbox' />
                 <div className='fd-switch__wrapper'>
                     <div className='fd-switch__track'>
@@ -82,9 +86,7 @@ const Switch = React.forwardRef(({
             {children}
         </FormLabel>
     );
-
 });
-
 
 Switch.displayName = 'Switch';
 
@@ -102,16 +104,25 @@ Switch.propTypes = {
         unchecked: PropTypes.shape(SwitchItem.PropTypes)
     }),
     labelProps: PropTypes.object,
+    localizedText: CustomPropTypes.i18n({
+        inputLabel: PropTypes.string
+    }),
     semantic: PropTypes.bool,
     onChange: PropTypes.func
 };
 
 Switch.defaultProps = {
+    localizedText: {
+        inputLabel: 'Toggle'
+    },
     onChange: () => { }
 };
 
 Switch.propDescriptions = {
     checked: 'Set to true for component to be checked on render.',
+    localizedTextShape: {
+        inputLabel: 'aria-label for the <input> element.'
+    },
     internalLabels: 'Provide text and/or an icon for labels inside the Switch component.'
 };
 
